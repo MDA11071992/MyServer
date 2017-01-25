@@ -1,10 +1,12 @@
 ﻿<!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF8">
 <html>
+
 <head>
+
     <title>Websocket Sample</title>
+
     <script>
-        // Спасибо http://learn.javascript.ru/websockets
         var id = Math.floor(Math.random()*10000);
         var socket = new WebSocket("ws://127.0.0.1:8080/ws?id=" + id);
         socket.onopen = function() {
@@ -12,7 +14,7 @@
 
             var data = "mes";
             socket.send(data);
-          //  alert("Отправлены данные '" + data + "'");
+            alert("Отправлены данные '" + data + "'");
         };
 
         socket.onclose = function(event) {
@@ -35,7 +37,9 @@
     </script>
 
 </head>
+
 <body>
+
 <script>
     function fresh() {
         location.reload();
@@ -49,7 +53,11 @@
     setInterval("mesage()", id);
 
 </script>
+
 <h1>This is SERVER</h1>
+
 <button onclick="fresh()">reload</button>
+
 </body>
+
 </html>
